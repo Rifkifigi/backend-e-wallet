@@ -355,5 +355,3 @@ Dibuat untuk memenuhi requirement project e-wallet/tabungan mini dengan fitur:
 - Menampilkan lebih dari 1 saving per customer
 
 ---
-
-**Happy Coding! 🚀**
