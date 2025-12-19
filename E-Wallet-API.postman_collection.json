@@ -1,0 +1,232 @@
+{
+  "info": {
+    "name": "E-Wallet API Collection",
+    "description": "Collection untuk testing E-Wallet/Tabungan Mini API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Customer APIs",
+      "item": [
+        {
+          "name": "Get Customer by Government ID ⭐",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/customers/government-id/3327012345678901",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "customers", "government-id", "3327012345678901"]
+            },
+            "description": "API utama untuk mendapatkan customer berdasarkan Government ID (KTP/NIK) beserta semua saving account yang dimiliki"
+          }
+        },
+        {
+          "name": "Create Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"governmentId\": \"3330012345678904\",\n  \"email\": \"john@example.com\",\n  \"phoneNumber\": \"081234567893\",\n  \"address\": \"Jl. Gatot Subroto No. 100, Surabaya\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/customers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "customers"]
+            }
+          }
+        },
+        {
+          "name": "Get All Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/customers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "customers"]
+            }
+          }
+        },
+        {
+          "name": "Get Customer by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/customers/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "customers", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Saving APIs",
+      "item": [
+        {
+          "name": "Create Saving",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountNumber\": \"9999999999\",\n  \"accountName\": \"Tabungan Baru\",\n  \"balance\": 3000000,\n  \"accountType\": \"REGULAR\",\n  \"customerId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/savings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "savings"]
+            }
+          }
+        },
+        {
+          "name": "Get All Savings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/savings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "savings"]
+            }
+          }
+        },
+        {
+          "name": "Get Saving by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/savings/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "savings", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Saving by Account Number",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/savings/account/1234567890",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "savings", "account", "1234567890"]
+            }
+          }
+        },
+        {
+          "name": "Get Savings by Customer ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/savings/customer/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "savings", "customer", "1"]
+            }
+          }
+        },
+        {
+          "name": "Deposit",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/savings/1/deposit?amount=1000000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "savings", "1", "deposit"],
+              "query": [
+                {
+                  "key": "amount",
+                  "value": "1000000"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Withdraw",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/savings/2/withdraw?amount=500000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "savings", "2", "withdraw"],
+              "query": [
+                {
+                  "key": "amount",
+                  "value": "500000"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Transfer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/savings/transfer?fromSavingId=1&toSavingId=2&amount=1000000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "savings", "transfer"],
+              "query": [
+                {
+                  "key": "fromSavingId",
+                  "value": "1"
+                },
+                {
+                  "key": "toSavingId",
+                  "value": "2"
+                },
+                {
+                  "key": "amount",
+                  "value": "1000000"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

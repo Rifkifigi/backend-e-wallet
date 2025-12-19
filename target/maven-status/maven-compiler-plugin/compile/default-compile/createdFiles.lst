@@ -1,0 +1,13 @@
+com\ewallet\service\SavingService.class
+com\ewallet\dto\CreateSavingDTO.class
+com\ewallet\EWalletApplication.class
+com\ewallet\service\CustomerService.class
+com\ewallet\dto\CreateCustomerDTO.class
+com\ewallet\dto\CustomerWithSavingsDTO.class
+com\ewallet\model\Saving.class
+com\ewallet\controller\SavingController.class
+com\ewallet\repository\SavingRepository.class
+com\ewallet\repository\CustomerRepository.class
+com\ewallet\controller\CustomerController.class
+com\ewallet\model\Customer.class
+com\ewallet\dto\SavingDTO.class
